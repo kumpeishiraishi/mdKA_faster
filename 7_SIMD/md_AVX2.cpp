@@ -708,7 +708,7 @@ void FIRE2(const double fmax_tol) {
         ////// converge //////
         double fmax = 0.0;
         for (int i=0; i<N; i++) {
-            double temp = std::inner_product(*force+deg*i, *force+deg*i+deg, *force+deg*i, 0.0);
+            double temp = std::inner_product(*force+4*i, *force+4*i+deg, *force+4*i, 0.0);
             if (fmax < temp) fmax = temp;
         }
         if (fmax < fmax_tol2) {
